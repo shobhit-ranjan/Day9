@@ -3,11 +3,14 @@
 echo " Welcome to Employee Wage Computation Program"
 
 
-rand=$((RANDOM%3))
-
 salperhr=20
 fullday=0
+workingDay=20
 
+
+for ((i=0;i<20;i++))
+do
+rand=$((RANDOM%3))
 
 
 echo $rand
@@ -21,13 +24,15 @@ elif [ $rand -eq 1 ]
 	fullday=4
 else
     echo "Absent"
+       fullday=0
 
 fi
 
 
-sal=$(($salperhr*$fullday))
+sal=$((sal+($salperhr*$fullday)))
+done
 
-echo "Salary is "$sal
+echo "Total salary of 20 is "$sal
 
 # By case
 
