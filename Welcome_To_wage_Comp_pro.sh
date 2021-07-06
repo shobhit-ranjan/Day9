@@ -6,33 +6,44 @@ echo " Welcome to Employee Wage Computation Program"
 salperhr=20
 fullday=0
 workingDay=20
+working=0
 
-
-for ((i=0;i<20;i++))
+while [ $working -lt 100 ]
 do
-rand=$((RANDOM%3))
+ for ((i=0;i<20;i++))
+ do
+  rand=$((RANDOM%3))
 
 
-echo $rand
-if [ $rand -eq 0 ]
-   then
-      echo " Present "
-       fullday=8
-elif [ $rand -eq 1 ]
-   then
-      echo "Half Day you were there."
-	fullday=4
-else
-    echo "Absent"
-       fullday=0
+	echo $rand
+	if [ $rand -eq 0 ]
+	   then
+	      echo " Present "
+	       fullday=8
+	elif [ $rand -eq 1 ]
+	   then
+      	     echo "Half Day you were there."
+	     fullday=4
+	else
+             echo "Absent"
+             fullday=0
 
-fi
+	fi
 
 
-sal=$((sal+($salperhr*$fullday)))
+	sal=$((sal+($salperhr*$fullday)))
+        working=$((working +$fullday))
+ done
 done
-
 echo "Total salary of 20 is "$sal
+
+
+
+
+
+
+
+
 
 # By case
 
