@@ -1,6 +1,7 @@
 
 
 
+salPerDay=200
 
 
 function getworkinghr()
@@ -22,12 +23,13 @@ function getworkinghr()
 }
 #passing random no to function from 0 to 3
 workingHr="$( getworkinghr $((RANDOM%3)))"
-
+totalsal=$((totalsal+(workingHr*salPerDay)))
 
 
 
 echo "working hr of person is "$workingHr
-
+echo "sal per day of a person is"$salPerDay
+echo "total sal of a person is "$totalsal
 
 
 
