@@ -7,8 +7,9 @@ salperhr=20
 fullday=0
 workingDay=20
 working=0
+totalday=0
 
-while [ $working -lt 100 ]
+while [ $working -lt 100 ]  && [ $totalday -lt 20 ]
 do
  for ((i=0;i<20;i++))
  do
@@ -20,6 +21,7 @@ do
 	   then
 	      echo " Present "
 	       fullday=8
+                totalday=$(($totalday+1))
 	elif [ $rand -eq 1 ]
 	   then
       	     echo "Half Day you were there."
